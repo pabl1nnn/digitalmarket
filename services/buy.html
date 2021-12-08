@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+      <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../assets/css/estilo.css" rel="stylesheet">
+      <title>Comprar - DigitalMarket</title>
+   </head>
+   <body>
+      <header>
+         <div class="container-fluid">
+            <div id="header" class="row">
+               <div class="col-6">
+                  <a href="../index.html" id="link" >
+                     <h1 id="logo"><img id="logo2" src="../assets/images/logo2.png" width="225px"><img id="eth" src="../assets/images/logo.png" width="50px"></h1>
+                  </a>
+               </div>
+               <div class="col-3">
+                  <a href="#" id="link" >
+                     <i id="ico1" class=""></i>
+                     <p id="acceso1"></p>
+                  </a>
+               </div>
+               <div id="cuenta" class="col-3">
+                  <a href="account.html" id="link" >
+                     <i  id="ico2" class="far fa-user-circle"></i>
+                     <p id="acceso2">Mi cuenta</p>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="container-fluid" id="nav">
+         <input type="checkbox" id="btn-menu">
+         <label for="btn-menu"><i id="lista" class="fas fa-list"></i>
+         </label>
+         <nav class="menu">
+            <ul>
+               <li><a href="home.html"><i  class="fas fa-home"></i><br>Inicio</a></li>
+               <li><a href="wallet.html"><i class="fas fa-wallet"></i><br>Billetera</a></li>
+               <li><a style="color: white" href="buy.html"><i class="fas fa-shopping-cart"></i><br>Comprar</a></li>
+               <li><a href="sell.html"><i class="fas fa-hand-holding-usd"></i><br>Vender</a></li>
+               <li><a href="convert.html"><i class="fab fa-bitcoin"></i><br>Convertir</a></li>
+            </ul>
+         </nav>
+      </div>
+      <!-- contenido de la página -->
+      <div class="container service-page">
+         <div class="container titulo-caja">
+            <p>Bienvenido a DigitalMarket, %User%</p>
+         </div>
+         <div class="container contenido-caja">
+            <h5>Balance estimado: </h5>
+            <p class="monto-btc">0,00000000 <em class="monto-clp">BTC ≈ $0</em></p>
+            <h5>Método P2P:</h5>
+            <p id="grey">Al contar con la confianza de millones de usuarios, DigitalMarket P2P es un mercado peer-to-peer líder, en el que puedes comprar Bitcoin y otras criptomonedas por dinero efectivo usando tu método de pago, moneda e incluso precio preferido pagando cero comisiones.</p>
+            <label class="titulo-elige" for="inlineFormCustomSelect">Elige moneda de pago:</label><br>
+            <select class="elige-moneda" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+               <option value="1">CLP</option>
+               <option value="2">ARS</option>
+               <option value="3">BRL</option>
+               <option value="3">USD</option>
+               <option value="3">EUR</option>
+            </select>
+            <br>
+            <label class="titulo-elige" for="inlineFormCustomSelect">Criptomoneda que deseas comprar:</label><br>
+            <select class="elige-moneda" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+               <option value="1">BTC</option>
+               <option value="2">ETH</option>
+               <option value="3">USDT</option>
+               <option value="3">BNB</option>
+               <option value="3">SOL</option>
+               <option value="3">ADA</option>
+               <option value="3">DOT</option>
+               <option value="3">DOGE</option>
+               <option value="3">SHIBA</option>
+               <option value="3">TRX</option>
+               <option value="3">LTC</option>
+            </select>
+            <br>
+            <button id="boton-convertir" onclick="fun()">Buscar ofertas  <i class="fas fa-search"></i></button>
+            <div id = "con" style = "display: none">
+               <div id="tabla-p2p">
+                  <div class="table-responsive">
+                     <table class="table tabla-oscura">
+                        <thead>
+                           <tr>
+                              <th scope="col">Vendedor</th>
+                              <th scope="col">Precio</th>
+                              <th scope="col">Disponible/Límite</th>
+                              <th scope="col">Método de pago</th>
+                              <th scope="col">Operación</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th scope="row">
+                                 %User%
+                                 <div id="estrellitas">
+                                    <ul>
+                                       <li><i class="fas fa-star"></i></li>
+                                       <li><i class="fas fa-star"></i></li>
+                                       <li><i class="fas fa-star"></i></li>
+                                       <li><i class="far fa-star"></i></li>
+                                       <li><i class="far fa-star"></i></li>
+                                    </ul>
+                                 </div>
+                              </th>
+                              <td>
+                                 <p id="precio-buy">44,386,649.88<em id="moneda-buy">  CLP</em></p>
+                              </td>
+                              <td>
+                                 <div id="disponible-limite">
+                                    <ul>
+                                       <li>
+                                          <em id="moneda-buy">Disponible</em>
+                                          <p id="precio-buy"> 0.15587529 BTC </p>
+                                       </li>
+                                       <li>
+                                          <em id="moneda-buy">Límite:</em>
+                                          <p id="precio-buy"> CLP$15,000.00 − CLP$5,000,000.00</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </td>
+                              <td>
+                                 <a id="banco-estado">Banco Estado</a>
+                                 <a id="banco-santander">Banco Santander</a>
+                                 <a id="banco-chile">Banco de Chile</a>
+                              </td>
+                              <td>
+                                 </head>
+                                 <body>
+                                    <a href="javascript:popup('buy-process.html',1200,700)"> <button id="buy-btn">Comprar BTC</button></a>
+                  </div>
+                  </td>
+                  </tr>
+                  <tr>
+                  <th scope="row">
+                  %User%
+                  <div id="estrellitas">
+                  <ul>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="far fa-star"></i></li>
+                  </ul>
+                  </div>
+                  </th>
+                  <td>
+                  <p id="precio-buy">
+                  48,439,613.11<em id="moneda-buy">  CLP</em></p>
+                  </td>
+                  <td>
+                  <div id="disponible-limite">
+                  <ul>
+                  <li>
+                  <em id="moneda-buy">Disponible</em><p id="precio-buy"> 0.00934096 BTC </p>
+                  </li>
+                  <li>
+                  <em id="moneda-buy">Límite:</em><p id="precio-buy">CLP$10,000.00 − $452,472.48</p>
+                  </li>
+                  </ul>
+                  </div>
+                  </td>
+                  <td>
+                  <a id="mercado-pago">Mercado Pago</a>
+                  <a id="banco-falabella">Banco Falabella</a>
+                  </td>
+                  <td>
+                  <a href="javascript:popup('buy-process.html',1200,700)"> <button id="buy-btn">Comprar BTC</button></a>
+               </div>
+               </td>
+               </tr>
+               <tr>
+               <th scope="row">
+               %User%
+               <div id="estrellitas">
+               <ul>
+               <li><i class="fas fa-star"></i></li>
+               <li><i class="far fa-star"></i></li>
+               <li><i class="far fa-star"></i></li>
+               <li><i class="far fa-star"></i></li>
+               <li><i class="far fa-star"></i></li>
+               </ul>
+               </div>
+               </th>
+               <td>
+               <p id="precio-buy">44,483,378.06<em id="moneda-buy">  CLP</em></p>
+               </td>
+               <td>
+               <div id="disponible-limite">
+               <ul>
+               <li>
+               <em id="moneda-buy">Disponible</em><p id="precio-buy"> 0.07250343 BTC </p>
+               </li>
+               <li>
+               <em id="moneda-buy">Límite:</em><p id="precio-buy"> CLP$250,000.00 − CLP$3,225,197.48</p>
+               </li>
+               </ul>
+               </div>
+               </td>
+               <td>
+               <a id="mach">MACH</a>
+               <a id="paypal">PayPal</a>
+               </td>
+               <td>
+               <a href="javascript:popup('buy-process.html',1200,700)"> <button id="buy-btn">Comprar BTC</button></a>
+            </div>
+            </td>
+            </tr>
+            <tr>
+            <th scope="row">
+            %User%
+            <div id="estrellitas">
+            <ul>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="far fa-star"></i></li>
+            <li><i class="far fa-star"></i></li>
+            </ul>
+            </div>
+            </th>
+            <td>
+            <p id="precio-buy">44,386,649.88<em id="moneda-buy">  CLP</em></p>
+            </td>
+            <td>
+            <div id="disponible-limite">
+            <ul>
+            <li>
+            <em id="moneda-buy">Disponible</em><p id="precio-buy"> 0.15587529 BTC </p>
+            </li>
+            <li>
+            <em id="moneda-buy">Límite:</em><p id="precio-buy"> CLP$15,000.00 − CLP$5,000,000.00</p>
+            </li>
+            </ul>
+            </div>
+            </td>
+            <td>
+            <a id="transf-bancaria">Transferencia Bancaria</a>
+            </td>
+            <td>
+            <a href="javascript:popup('buy-process.html',1200,700)"> <button id="buy-btn">Comprar BTC</button></a>
+         </div>
+         </td>
+         </tr>
+         <tr>
+         <th scope="row">
+         %User%
+         <div id="estrellitas">
+         <ul>
+         <li><i class="fas fa-star"></i></li>
+         <li><i class="fas fa-star"></i></li>
+         <li><i class="far fa-star"></i></li>
+         <li><i class="far fa-star"></i></li>
+         <li><i class="far fa-star"></i></li>
+         </ul>
+         </div>
+         </th>
+         <td>
+         <p id="precio-buy">
+         45,430,653.67<em id="moneda-buy">  CLP</em></p>
+         </td>
+         <td>
+         <div id="disponible-limite">
+         <ul>
+         <li>
+         <em id="moneda-buy">Disponible</em><p id="precio-buy"> 0.01403200 BTC </p>
+         </li>
+         <li>
+         <em id="moneda-buy">Límite:</em><p id="precio-buy"> 
+         CLP$30,000 − CLP$3,000,000.00</p>
+         </li>
+         </ul>
+         </div>
+         </td>
+         <td>
+         <a id="transf-bancaria">Transferencia Bancaria</a>
+         </td>
+         <td>
+         <a href="javascript:popup('buy-process.html',1200,700)"> <button id="buy-btn">Comprar BTC</button></a>
+      </div>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <!-- fin contenido de la página -->
+      <footer>
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-12 col-lg-4">
+      <h4>Ubicanos:</h4>
+      <p> <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Av. Arturo Prat Chacón 2120, Iquique, Tarapacá.</p>
+      <h4>Contacto:</h4>
+      <p> <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;+56 9 4041 2897</p>
+      <p> <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;+56 9 6224 0670</p>
+      </div>
+      <div class="col-xs-12 col-lg-4">
+      <ul id="menu-footer">
+      <li><a href="../fee.html">Tarifas</a></li>
+      <li><a href="../opinions.html">Opiniones</a></li>
+      <li><a href="../contact-us.html">Contáctanos</a></li>
+      <li><a href="../about-us.html">Sobre nosotros</a></li>
+      <li><a href="../landing-page.html">Suscríbete</a></li>
+      <li><a href="../terms-&-conditions.html">Términos y Condiciones</a></li>
+      </ul>
+      <h4 id="copy" >© 2021 ~ DigitalMarket</h4>
+      <p id="derechos">Todos los derechos reservados.</p>
+      </div>
+      <div class="col-xs-12 col-lg-4">
+      <h4>Síguenos:</h4>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#"> <i class="fab fa-youtube"></i></a><br><br>
+      <h4>Descarga nuestra app:</h4>
+      <a href="#"> <i class="fab fa-google-play"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#"><i class="fab fa-app-store"></i></a>
+      </div>
+      </div>
+      </div>
+      </footer>
+      <script src="https://kit.fontawesome.com/18d9c1f144.js" crossorigin="anonymous"></script>
+      <script src="../assets/js/bootstrap.bundle.js"></script>
+      <script src="../assets/js/script.js"></script>
+
+   </body>
+   <script type="text/javascript">
+    
+   </script>
+</html>
